@@ -1,4 +1,3 @@
-
 -- Criação do banco de dados
 CREATE DATABASE IF NOT EXISTS dblivraria;
 USE dblivraria;
