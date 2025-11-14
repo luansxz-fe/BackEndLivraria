@@ -1,9 +1,9 @@
 import express from 'express';
-import { listarAvaliacoes, criarAvaliacao } from '../controllers/avaliacoes.controller.js';
+import avaliacoesController from '../controllers/avaliacoes.controller.js';
 
 const router = express.Router();
 
-router.get('/', listarAvaliacoes);
-router.post('/', criarAvaliacao);
+router.get('/', avaliacoesController.listarAvaliacoes);
+router.post('/', avaliacoesController.criarAvaliacao);
 
 export default router;

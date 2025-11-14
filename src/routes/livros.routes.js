@@ -1,13 +1,13 @@
 import express from 'express';
-import { listarLivros, buscarLivro, criarLivro, atualizarLivro, excluirLivro, livrosComAvaliacoes } from '../controllers/livros.controller.js';
+import livrosController from '../controllers/livros.controller.js';
 
 const router = express.Router();
 
-router.get('/avaliacoes', livrosComAvaliacoes); // precisa vir antes de '/:id'
-router.get('/', listarLivros);
-router.get('/:id', buscarLivro);
-router.post('/', criarLivro);
-router.put('/:id', atualizarLivro);
-router.delete('/:id', excluirLivro);
+router.get('/', livrosController.listarLivros);
+router.get('/avaliacoes', livrosController.listarLivrosComAvaliacoes);
+router.get('/:id', livrosController.buscarLivro);
+router.post('/', livrosController.criarLivro);
+router.put('/:id', livrosController.atualizarLivro);
+router.delete('/:id', livrosController.excluirLivro);
 
 export default router;
